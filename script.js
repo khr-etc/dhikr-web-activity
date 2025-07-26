@@ -64,30 +64,31 @@ const adhkar = [
         source: "Bilāl b. Yasār b. Zayd (raḍiy Allāhu ‘anhu) (the freed slave of the Prophet ﷺ narrated: “My father narrated to me, from my grandfather, that he heard the Prophet ﷺ say: ‘Whoever says [the above], then Allah will forgive him, even if he fled from battle.’” (Tirmidhī 3577)"
     }
 
-    // Add in 1 or 2 more adhkar below here - don't forget the comma!
+    // TODO: Add in 1 or 2 more adhkar below here - don't forget the comma!
 ];
 
 // This is what we use to track which adhkar we are on in the whole list
 // Note: computers don't start counting at 1, they start at 0
-let currentIndex = 0;
+let currentIndex;   // TODO: We have to set this equal to something
 
 // This is how we tell our JavaScript code to connect to the HTML code
 const quoteBox = document.getElementById("ajr");
 const button = document.getElementById("generate");
 
 // Now we will tell the computer what to do when someone clicks the button
-button.addEventListener("click", function () {
+button.addEventListener("BROCCOLI", function () {     // TODO: Right now, this is set to the wrong value. What should be here?
 
   // We'll be using 'currentIndex' to track where we are in that list of adhkar, so it can loop through
-  const entry = adhkar[currentIndex];
+//   const entry = adhkar[currentIndex];        // TODO: Simple edit - un-comment this to make sure this line actually runs
 
   // This is where we display each adhkar on the HTML page
   // Recognize the HTML tags?
+  // TODO: see those question marks with error lines? We'll need to replace them with the correct things.
   quoteBox.innerHTML = `
-    <p style="font-size: 24px;">${entry.arabic}</p>
-    <p><em>${entry.transliteration}</em></p>
-    <p>${entry.translation}</p>
-    <p><small><strong>${entry.source}</strong></small></p>
+    <p style="font-size: 24px;">${entry.??}</p>
+    <p><em>${entry.??}</em></p>
+    <p>${entry.??}</p>
+    <p><small><strong>${entry.??}</strong></small></p>
   `;
 
   // If we don't do this, it won't update to the next adhkar in the list!
