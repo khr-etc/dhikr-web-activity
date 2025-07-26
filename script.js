@@ -1,3 +1,5 @@
+// We put our different adhkar into a list, so that the code can cycle through each time we click a button
+// Each item of the list has 4 parts: arabic, transliteration, translation, & source - organizing it like this makes it easier to display
 const adhkar = [
     {
         arabic: "لَا إِلٰهَ إِلَّا اللّٰهُ.",
@@ -61,16 +63,26 @@ const adhkar = [
         translation: "I seek forgiveness from Allah, the Greatest, whom there is none worthy of worship except Him, The Ever Living, The One Who sustains and protects all that exists, I turn in repentance towards you.",
         source: "Bilāl b. Yasār b. Zayd (raḍiy Allāhu ‘anhu) (the freed slave of the Prophet ﷺ narrated: “My father narrated to me, from my grandfather, that he heard the Prophet ﷺ say: ‘Whoever says [the above], then Allah will forgive him, even if he fled from battle.’” (Tirmidhī 3577)"
     }
+
+    // Add in 1 or 2 more adhkar below here - don't forget the comma!
 ];
 
+// This is what we use to track which adhkar we are on in the whole list
+// Note: computers don't start counting at 1, they start at 0
 let currentIndex = 0;
 
+// This is how we tell our JavaScript code to connect to the HTML code
 const quoteBox = document.getElementById("ajr");
 const button = document.getElementById("generate");
 
+// Now we will tell the computer what to do when someone clicks the button
 button.addEventListener("click", function () {
+
+  // We'll be using 'currentIndex' to track where we are in that list of adhkar, so it can loop through
   const entry = adhkar[currentIndex];
 
+  // This is where we display each adhkar on the HTML page
+  // Recognize the HTML tags?
   quoteBox.innerHTML = `
     <p style="font-size: 24px;">${entry.arabic}</p>
     <p><em>${entry.transliteration}</em></p>
@@ -78,6 +90,7 @@ button.addEventListener("click", function () {
     <p><small><strong>${entry.source}</strong></small></p>
   `;
 
+  // If we don't do this, it won't update to the next adhkar in the list!
   currentIndex = (currentIndex + 1) % adhkar.length;
 });
 
