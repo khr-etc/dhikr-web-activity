@@ -64,7 +64,7 @@ const adhkar = [
         source: "Bilāl b. Yasār b. Zayd (raḍiy Allāhu ‘anhu) (the freed slave of the Prophet ﷺ narrated: “My father narrated to me, from my grandfather, that he heard the Prophet ﷺ say: ‘Whoever says [the above], then Allah will forgive him, even if he fled from battle.’” (Tirmidhī 3577)"
     }
 
-    // TODO: Add in 1 or 2 more adhkar below here - don't forget the comma!
+    // LAST TODO (if there's time): Add in 1 or 2 more adhkar below here - don't forget the comma!
 ];
 
 // This is what we use to track which adhkar we are on in the whole list
